@@ -4,17 +4,16 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-  return "Olá, <b>tudo bem</b>?"
-      
+    return "Olá, <b>tudo bem</b>?"
+
 @app.route('/teste')
 def teste():
-  return "Essa página é um <b>teste do novo comando</b>."
+    return "Essa página é um <b>teste do novo comando</b>."
 
 @app.route('/nome')
 def nome():
-    return 'Digite seu nome: <form method="post"><input type="text" name="nome"><input type="submit" value="Enviar"></form>' 
+    return 'Digite seu nome: <form method="post"><input type="text" name="nome"><input type="submit" value="Enviar"></form>'
 
-from flask import Flask
 from bs4 import BeautifulSoup
 import requests
 from datetime import datetime
@@ -25,8 +24,6 @@ try:
 except ImportError:
     import subprocess
     subprocess.check_call(['pip', 'install', '-r', 'requirements.txt'])
-
-app = Flask(__name__)
 
 @app.route('/dados')
 def obter_dados_bioma():
